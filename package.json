@@ -3,6 +3,7 @@
   "private": true,
   "devDependencies": {},
   "dependencies": {
+    "aes": "^0.1.0",
     "browserify": "^14.3.0",
     "coinkey": "^2.0.0",
     "qrcode-generator": "^1.2.0",

@@ -5,36 +5,84 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="style.css">
-    <script src="js/coinkey.js"></script>
-    <script src="js/qrcode.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/print.css" media="print">
+    <script src="js/aes.js"></script>
     <script src="js/scripts.js"></script>
     </script>
   </head>
   <body>
 
+  <div id="middle-strip"></div>
+
     <div class="header">
+      <img class="logo" src="images/logo-extended.png" />
       <h1>Nav Coin Paper Wallet Generator</h1>
+    </div>
+
+    <div class="form">
+      <p>Choose how many wallets you want to generate. You can generate up to 4 which will fit onto 1 piece of portrait A4 paper.</p>
+      <select id="number-option">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+      </select>
+      <select id="color-option">
+        <option value="FULL_COLOR">Full Color</option>
+        <option value="BLACK_WHITE">Black & White</option>
+      </select>
+      <button id="generate">Generate Wallet</button>
     </div>
 
     <div class="container">
 
-      <button id="generate">Generate Wallet</button>
-
-      <div>
-        <div id="pubkey-string"></div>
-        <div id="pubkey-qr"></div>
+      <div class="paper-wallet" id="paper-wallet-0">
+        <img class="paper-background" id="paper-background-0" src="images/paper-wallet-color.png" />
+        <div id="pubkey-string-0" class="pubkey-string"></div>
+        <div id="pubkey-string-0-invert" class="pubkey-string-invert"></div>
+        <div id="pubkey-qr-0" class="pubkey-qr"></div>
+        <div id="privkey-string-0" class="privkey-string"></div>
+        <div id="privkey-string-0-invert" class="privkey-string-invert"></div>
+        <div id="privkey-qr-0" class="privkey-qr"></div>
       </div>
-      <div>
-        <div id="privkey-string"></div>
-        <div id="privkey-qr"></div>
+
+      <div class="paper-wallet" id="paper-wallet-1">
+        <img class="paper-background" id="paper-background-1" src="images/paper-wallet-color.png" />
+        <div id="pubkey-string-1" class="pubkey-string"></div>
+        <div id="pubkey-string-1-invert" class="pubkey-string-invert"></div>
+        <div id="pubkey-qr-1" class="pubkey-qr"></div>
+        <div id="privkey-string-1" class="privkey-string"></div>
+        <div id="privkey-string-1-invert" class="privkey-string-invert"></div>
+        <div id="privkey-qr-1" class="privkey-qr"></div>
+      </div>
+
+      <div class="paper-wallet" id="paper-wallet-2">
+        <img class="paper-background" id="paper-background-2" src="images/paper-wallet-color.png" />
+        <div id="pubkey-string-2" class="pubkey-string"></div>
+        <div id="pubkey-string-2-invert" class="pubkey-string-invert"></div>
+        <div id="pubkey-qr-2" class="pubkey-qr"></div>
+        <div id="privkey-string-2" class="privkey-string"></div>
+        <div id="privkey-string-2-invert" class="privkey-string-invert"></div>
+        <div id="privkey-qr-2" class="privkey-qr"></div>
+      </div>
+
+      <div class="paper-wallet" id="paper-wallet-3">
+        <img class="paper-background" id="paper-background-3" src="images/paper-wallet-color.png" />
+        <div id="pubkey-string-3" class="pubkey-string"></div>
+        <div id="pubkey-string-3-invert" class="pubkey-string-invert"></div>
+        <div id="pubkey-qr-3" class="pubkey-qr"></div>
+        <div id="privkey-string-3" class="privkey-string"></div>
+        <div id="privkey-string-3-invert" class="privkey-string-invert"></div>
+        <div id="privkey-qr-3" class="privkey-qr"></div>
       </div>
 
     </div>
 
     <div class="footer">
       <div class="container">
-        <p>from the Nav Coin team</p>
+        <p>brought to you by the <a href="http://www.navcoin.org" target="e">Nav Coin</a> team</p>
+        <p class="terms">By using this software you agree that Nav Coin is not responsible for any loss or damages caused by using this sofware and that you use it at your own risk.</p>
       </div>
     </div>
 
