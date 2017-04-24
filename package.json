@@ -4,9 +4,11 @@
   "devDependencies": {},
   "dependencies": {
     "aes": "^0.1.0",
+    "bip38": "https://github.com/craigmacgregor/bip38/tarball/master",
     "browserify": "^14.3.0",
     "coinkey": "^2.0.0",
     "qrcode-generator": "^1.2.0",
-    "secure-random": "^1.1.1"
+    "secure-random": "^1.1.1",
+    "wif": "^2.0.6"
   }
 }

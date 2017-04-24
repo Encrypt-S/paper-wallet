@@ -2,12 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Nav Coin Paper Wallet</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/print.css" media="print">
-    <script src="js/aes.js"></script>
     <script src="js/scripts.js"></script>
     </script>
   </head>
@@ -20,19 +19,44 @@
       <h1>Nav Coin Paper Wallet Generator</h1>
     </div>
 
+    <div class="info">
+      <div class="layout-left">
+        <div class="inner-left">
+            <img src="images/info.png" />
+        </div>
+      </div>
+      <div class="layout-right">
+        <div class="inner-right">
+          <h2>What you need to know</h2>
+          <p>
+            None of the generated keys are ever broadcast over the internet.
+            It is recommended that run it locally on your computer instead of generating the keys directly on the site.
+          </p>
+          <p>
+            For the extra paranoid; you can run the generator and print the wallets using a secure offline environment and correctly wipe the environment and printer memory after use.
+          </p>
+          <a href="https://github.com/navcoindev/paper-wallet" target="e" class="btn">Download the Generator</a>
+
+        </div>
+      </div>
+    </div>
+
     <div class="form">
       <p>Choose how many wallets you want to generate. You can generate up to 4 which will fit onto 1 piece of portrait A4 paper.</p>
-      <select id="number-option">
+      <select id="number-option" class="form-control">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
         <option value="4">4</option>
       </select>
-      <select id="color-option">
+      <select id="color-option" class="form-control">
         <option value="FULL_COLOR">Full Color</option>
         <option value="BLACK_WHITE">Black & White</option>
       </select>
-      <button id="generate">Generate Wallet</button>
+      <input class="form-input" placeholder="BIP38 Password (Optional)" />
+      <button id="generate" class="btn btn-small">Generate Wallets</button>
+      <button id="print" class="btn btn-small">Print</button>
+      <button id="reset" class="btn  btn-small btn-red">Reset</button>
     </div>
 
     <div class="container">
