@@ -11,145 +11,210 @@
     </script>
   </head>
   <body>
+    <div id="generate-tab">
+      <div class="header">
+        <img class="logo" src="images/logo-extended.png" />
+        <h1>Nav Coin Paper Wallet Generator</h1>
+        <span class="navigate">
+          <a class="btn btn-small" id="decrypt-tab-btn">Decrypt</a>
+          <a class="btn btn-small active">Generate</a>
+        </span>
+      </div>
 
-  <div id="middle-strip"></div>
+      <div class="info">
+        <div class="inner">
+          <div class="layout-left">
+            <div class="inner-left">
+                <img src="images/info.png" />
+            </div>
+          </div>
+          <div class="layout-right">
+            <div class="inner-right">
+              <h2>What you need to know</h2>
+              <p>
+                None of the generated keys are ever broadcast over the internet.
+                It is recommended that run it locally on your computer instead of generating the keys directly on the site.
+              </p>
+              <p>
+                For the extra paranoid; you can run the generator and print the wallets using a secure offline environment and correctly wipe the environment and printer memory after use.
+              </p>
+              <a href="https://github.com/navcoindev/paper-wallet" target="e" class="btn">Download the Generator</a>
 
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form">
+        <p>You can generate up to 4 which will fit onto 1 piece of portrait A4 paper.</p>
+        <p>Encrypting the private keys with a BIP38 password is recommended, but optional. Encrypting can take some time to complete, so please be patient. The password you set will be used for all generated wallets. This password can not be recovered, so do not lose it!</p>
+        <p>It is recommended that you test decrypting the private key before sending coins to it to check nothing went wrong during encrytion.</p>
+        <select id="number-option" class="form-control">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+        <select id="color-option" class="form-control">
+          <option value="FULL_COLOR">Full Color</option>
+          <option value="BLACK_WHITE">Black & White</option>
+        </select>
+        <input class="form-input" id="password" placeholder="BIP38 Password (Optional)" maxlength="32" />
+        <button id="generate" class="btn btn-small">Generate Wallets</button>
+        <button id="print" class="btn btn-small">Print</button>
+        <button id="reset" class="btn  btn-small btn-red">Reset</button>
+      </div>
+
+      <div class="container">
+        <div id="wallet-0" class="wallet-container">
+            <h3 class="paper-title" id="paper-title-0">Paper Wallet 1</h3>
+            <div class="paper-wallet" id="paper-wallet-0">
+              <img class="paper-background" id="paper-background-0" src="images/paper-wallet-color.png" />
+              <div id="pubkey-string-0" class="pubkey-string"></div>
+              <div id="pubkey-string-0-invert" class="pubkey-string-invert"></div>
+              <div id="pubkey-qr-0" class="pubkey-qr"></div>
+              <div id="privkey-string-0" class="privkey-string"></div>
+              <div id="privkey-string-0-invert" class="privkey-string-invert"></div>
+              <div id="privkey-qr-0" class="privkey-qr"></div>
+            </div>
+            <div class="pt-output" id="plain-text-0">
+              <h4>Plain Text Address Info</h4>
+              <table>
+                <tr><td class="row-key">Public Key</td><td id="public-key-0"></td></tr>
+                <tr><td class="row-key">Private Key</td><td id="private-key-0"></td></tr>
+                <tr class="pt-encrypted" id="pt-encrypted-0"><td class="row-key">Encrypted Key</td><td id="encrypted-key-0"></td></tr>
+                <tr class="pt-password" id="pt-password-0"><td class="row-key">BIP38 Password</td><td id="password-0"></td></tr>
+              </table>
+            </div>
+            <button class="btn btn-small" id="decrypt-tab-0" style="margin-top: 10px;">Test Encryption</a>
+        </div>
+        <div id="wallet-1" class="wallet-container">
+            <h3 class="paper-title" id="paper-title-1">Paper Wallet 2</h3>
+            <div class="paper-wallet" id="paper-wallet-1">
+              <img class="paper-background" id="paper-background-1" src="images/paper-wallet-color.png" />
+              <div id="pubkey-string-1" class="pubkey-string"></div>
+              <div id="pubkey-string-1-invert" class="pubkey-string-invert"></div>
+              <div id="pubkey-qr-1" class="pubkey-qr"></div>
+              <div id="privkey-string-1" class="privkey-string"></div>
+              <div id="privkey-string-1-invert" class="privkey-string-invert"></div>
+              <div id="privkey-qr-1" class="privkey-qr"></div>
+            </div>
+            <div class="pt-output" id="plain-text-1">
+              <h4>Plain Text Address Info</h4>
+              <table>
+                <tr><td class="row-key">Public Key</td><td id="public-key-1"></td></tr>
+                <tr><td class="row-key">Private Key</td><td id="private-key-1"></td></tr>
+                <tr class="pt-encrypted" id="pt-encrypted-1"><td class="row-key">Encrypted Key</td><td id="encrypted-key-1"></td></tr>
+                <tr class="pt-password" id="pt-password-1"><td class="row-key">BIP38 Password</td><td id="password-1"></td></tr>
+              </table>
+            </div>
+            <button class="btn btn-small" id="decrypt-tab-1" style="margin-top: 10px;">Test Encryption</a>
+        </div>
+        <div id="wallet-2" class="wallet-container">
+            <h3 class="paper-title" id="paper-title-2">Paper Wallet 3</h3>
+            <div class="paper-wallet" id="paper-wallet-2">
+              <img class="paper-background" id="paper-background-2" src="images/paper-wallet-color.png" />
+              <div id="pubkey-string-2" class="pubkey-string"></div>
+              <div id="pubkey-string-2-invert" class="pubkey-string-invert"></div>
+              <div id="pubkey-qr-2" class="pubkey-qr"></div>
+              <div id="privkey-string-2" class="privkey-string"></div>
+              <div id="privkey-string-2-invert" class="privkey-string-invert"></div>
+              <div id="privkey-qr-2" class="privkey-qr"></div>
+            </div>
+            <div class="pt-output" id="plain-text-2">
+              <h4>Plain Text Address Info</h4>
+              <table>
+                <tr><td class="row-key">Public Key</td><td id="public-key-2"></td></tr>
+                <tr><td class="row-key">Private Key</td><td id="private-key-2"></td></tr>
+                <tr class="pt-encrypted" id="pt-encrypted-2"><td class="row-key">Encrypted Key</td><td id="encrypted-key-2"></td></tr>
+                <tr class="pt-password" id="pt-password-2"><td class="row-key">BIP38 Password</td><td id="password-2"></td></tr>
+              </table>
+            </div>
+            <button class="btn btn-small" id="decrypt-tab-2" style="margin-top: 10px;">Test Encryption</a>
+        </div>
+        <div id="wallet-3" class="wallet-container">
+            <h3 class="paper-title" id="paper-title-3">Paper Wallet 4</h3>
+            <div class="paper-wallet" id="paper-wallet-3">
+              <img class="paper-background" id="paper-background-3" src="images/paper-wallet-color.png" />
+              <div id="pubkey-string-3" class="pubkey-string"></div>
+              <div id="pubkey-string-3-invert" class="pubkey-string-invert"></div>
+              <div id="pubkey-qr-3" class="pubkey-qr"></div>
+              <div id="privkey-string-3" class="privkey-string"></div>
+              <div id="privkey-string-3-invert" class="privkey-string-invert"></div>
+              <div id="privkey-qr-3" class="privkey-qr"></div>
+            </div>
+            <div class="pt-output" id="plain-text-3">
+              <h4>Plain Text Address Info</h4>
+              <table>
+                <tr><td class="row-key">Public Key</td><td id="public-key-3"></td></tr>
+                <tr><td class="row-key">Private Key</td><td id="private-key-3"></td></tr>
+                <tr class="pt-encrypted" id="pt-encrypted-3"><td class="row-key">Encrypted Key</td><td id="encrypted-key-3"></td></tr>
+                <tr class="pt-password" id="pt-password-3"><td class="row-key">BIP38 Password</td><td id="password-3"></td></tr>
+              </table>
+            </div>
+            <button class="btn btn-small" id="decrypt-tab-3" style="margin-top: 10px;">Test Encryption</a>
+        </div>
+      </div>
+
+      <div class="footer">
+        <div class="container">
+          <p>brought to you by the <a href="http://www.navcoin.org" target="e">Nav Coin</a> team</p>
+          <p class="terms">By using this software you agree that Nav Coin is not responsible for any loss or damages caused by using this sofware and that you use it at your own risk.</p>
+        </div>
+      </div>
+  </div>
+  <div id="decrypt-tab">
     <div class="header">
       <img class="logo" src="images/logo-extended.png" />
       <h1>Nav Coin Paper Wallet Generator</h1>
       <span class="navigate">
-        <a class="btn btn-small" href="decrypt.html">Decrypt</a>
-        <a class="btn btn-small active" href="index.html">Generate</a>
+        <a class="btn btn-small active">Decrypt</a>
+        <a class="btn btn-small" id="generate-tab-btn">Generate</a>
       </span>
     </div>
 
     <div class="info">
-      <div class="layout-left">
-        <div class="inner-left">
-            <img src="images/info.png" />
+      <div class="inner">
+        <div class="layout-left">
+          <div class="inner-left">
+              <img src="images/key.png" style="width:192px;" />
+          </div>
         </div>
-      </div>
-      <div class="layout-right">
-        <div class="inner-right">
-          <h2>What you need to know</h2>
-          <p>
-            None of the generated keys are ever broadcast over the internet.
-            It is recommended that run it locally on your computer instead of generating the keys directly on the site.
-          </p>
-          <p>
-            For the extra paranoid; you can run the generator and print the wallets using a secure offline environment and correctly wipe the environment and printer memory after use.
-          </p>
-          <a href="https://github.com/navcoindev/paper-wallet" target="e" class="btn">Download the Generator</a>
+        <div class="layout-right">
+          <div class="inner-right">
+            <h2>Decrypt your private key</h2>
+            <p>
+              If you have encrypted your private key with the BIP38 option, you can reveal the wallet import format private key here.
+            </p>
 
+            <p>
+               If the encryption worked correctly, the private key here should match the private key displayed on the generator page.
+            </p>
+
+          </div>
         </div>
       </div>
     </div>
 
     <div class="form">
-      <p>You can generate up to 4 which will fit onto 1 piece of portrait A4 paper.</p>
-      <p>Encrypting the private keys with a BIP38 password is recommended, but optional. Encrypting can take some time to complete, so please be patient. The password you set will be used for all generated wallets. This password can not be recovered, so do not lose it!</p>
-      <p>It is recommended that you test decrypting the private key <a href="decrypt.html" target="e">here</a> before sending coins to it to check nothing went wrong during encrytion.</p>
-      <select id="number-option" class="form-control">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-      </select>
-      <select id="color-option" class="form-control">
-        <option value="FULL_COLOR">Full Color</option>
-        <option value="BLACK_WHITE">Black & White</option>
-      </select>
-      <input class="form-input" id="password" placeholder="BIP38 Password (Optional)" maxlength="32" />
-      <button id="generate" class="btn btn-small">Generate Wallets</button>
-      <button id="print" class="btn btn-small">Print</button>
-      <button id="reset" class="btn  btn-small btn-red">Reset</button>
+      <p>Please enter your BIP38 password and the encrypted key to decrypt.</p>
+      <input class="form-input" id="decrypt_password" placeholder="BIP38 Password" maxlength="32" />
+      <input class="form-input" id="encrypted" placeholder="Encrypted Key" />
+      <button id="decrypt" class="btn btn-small">Decrypt</button>
+      <button id="reset_decrypt" class="btn  btn-small btn-red">Reset</button>
     </div>
 
     <div class="container">
-      <div id="wallet-0" class="wallet-container">
-          <h3 class="paper-title" id="paper-title-0">Paper Wallet 1</h3>
-          <div class="paper-wallet" id="paper-wallet-0">
-            <img class="paper-background" id="paper-background-0" src="images/paper-wallet-color.png" />
-            <div id="pubkey-string-0" class="pubkey-string"></div>
-            <div id="pubkey-string-0-invert" class="pubkey-string-invert"></div>
-            <div id="pubkey-qr-0" class="pubkey-qr"></div>
-            <div id="privkey-string-0" class="privkey-string"></div>
-            <div id="privkey-string-0-invert" class="privkey-string-invert"></div>
-            <div id="privkey-qr-0" class="privkey-qr"></div>
-          </div>
-          <div class="pt-output" id="plain-text-0">
-            <h4>Plain Text Address Info</h4>
-            <table>
-              <tr><td class="row-key">Public Key</td><td id="public-key-0"></td></tr>
-              <tr><td class="row-key">Private Key</td><td id="private-key-0"></td></tr>
-              <tr class="pt-encrypted" id="pt-encrypted-0"><td class="row-key">Encrypted Key</td><td id="encrypted-key-0"></td></tr>
-              <tr class="pt-password" id="pt-password-0"><td class="row-key">BIP38 Password</td><td id="password-0"></td></tr>
-            </table>
-          </div>
+      <div class="pt-output" id="plain-text-d" style="margin-top: 20px;">
+        <h4>Decrypted Address Info</h4>
+        <table>
+          <tr><td class="row-key">Public Key</td><td id="public-key-d"></td></tr>
+          <tr><td class="row-key">Private Key</td><td id="private-key-d"></td></tr>
+          <tr><td class="row-key">Encrypted Key</td><td id="encrypted-key-d"></td></tr>
+          <tr><td class="row-key">BIP38 Password</td><td id="password-d"></td></tr>
+        </table>
       </div>
-      <div id="wallet-1" class="wallet-container">
-          <h3 class="paper-title" id="paper-title-1">Paper Wallet 2</h3>
-          <div class="paper-wallet" id="paper-wallet-1">
-            <img class="paper-background" id="paper-background-1" src="images/paper-wallet-color.png" />
-            <div id="pubkey-string-1" class="pubkey-string"></div>
-            <div id="pubkey-string-1-invert" class="pubkey-string-invert"></div>
-            <div id="pubkey-qr-1" class="pubkey-qr"></div>
-            <div id="privkey-string-1" class="privkey-string"></div>
-            <div id="privkey-string-1-invert" class="privkey-string-invert"></div>
-            <div id="privkey-qr-1" class="privkey-qr"></div>
-          </div>
-          <div class="pt-output" id="plain-text-1">
-            <h4>Plain Text Address Info</h4>
-            <table>
-              <tr><td class="row-key">Public Key</td><td id="public-key-1"></td></tr>
-              <tr><td class="row-key">Private Key</td><td id="private-key-1"></td></tr>
-              <tr class="pt-encrypted" id="pt-encrypted-1"><td class="row-key">Encrypted Key</td><td id="encrypted-key-1"></td></tr>
-              <tr class="pt-password" id="pt-password-1"><td class="row-key">BIP38 Password</td><td id="password-1"></td></tr>
-            </table>
-          </div>
-      </div>
-      <div id="wallet-2" class="wallet-container">
-          <h3 class="paper-title" id="paper-title-2">Paper Wallet 3</h3>
-          <div class="paper-wallet" id="paper-wallet-2">
-            <img class="paper-background" id="paper-background-2" src="images/paper-wallet-color.png" />
-            <div id="pubkey-string-2" class="pubkey-string"></div>
-            <div id="pubkey-string-2-invert" class="pubkey-string-invert"></div>
-            <div id="pubkey-qr-2" class="pubkey-qr"></div>
-            <div id="privkey-string-2" class="privkey-string"></div>
-            <div id="privkey-string-2-invert" class="privkey-string-invert"></div>
-            <div id="privkey-qr-2" class="privkey-qr"></div>
-          </div>
-          <div class="pt-output" id="plain-text-2">
-            <h4>Plain Text Address Info</h4>
-            <table>
-              <tr><td class="row-key">Public Key</td><td id="public-key-2"></td></tr>
-              <tr><td class="row-key">Private Key</td><td id="private-key-2"></td></tr>
-              <tr class="pt-encrypted" id="pt-encrypted-2"><td class="row-key">Encrypted Key</td><td id="encrypted-key-2"></td></tr>
-              <tr class="pt-password" id="pt-password-2"><td class="row-key">BIP38 Password</td><td id="password-2"></td></tr>
-            </table>
-          </div>
-      </div>
-      <div id="wallet-3" class="wallet-container">
-          <h3 class="paper-title" id="paper-title-3">Paper Wallet 4</h3>
-          <div class="paper-wallet" id="paper-wallet-3">
-            <img class="paper-background" id="paper-background-3" src="images/paper-wallet-color.png" />
-            <div id="pubkey-string-3" class="pubkey-string"></div>
-            <div id="pubkey-string-3-invert" class="pubkey-string-invert"></div>
-            <div id="pubkey-qr-3" class="pubkey-qr"></div>
-            <div id="privkey-string-3" class="privkey-string"></div>
-            <div id="privkey-string-3-invert" class="privkey-string-invert"></div>
-            <div id="privkey-qr-3" class="privkey-qr"></div>
-          </div>
-          <div class="pt-output" id="plain-text-3">
-            <h4>Plain Text Address Info</h4>
-            <table>
-              <tr><td class="row-key">Public Key</td><td id="public-key-3"></td></tr>
-              <tr><td class="row-key">Private Key</td><td id="private-key-3"></td></tr>
-              <tr class="pt-encrypted" id="pt-encrypted-3"><td class="row-key">Encrypted Key</td><td id="encrypted-key-3"></td></tr>
-              <tr class="pt-password" id="pt-password-3"><td class="row-key">BIP38 Password</td><td id="password-3"></td></tr>
-            </table>
-          </div>
-      </div>
+
     </div>
 
     <div class="footer">
@@ -158,10 +223,12 @@
         <p class="terms">By using this software you agree that Nav Coin is not responsible for any loss or damages caused by using this sofware and that you use it at your own risk.</p>
       </div>
     </div>
-    <div id="overlay">
-      <div id="loader">
-          <h3>Encrypting Keys ...</h3>
-      </div>
+  </div>
+  <div id="overlay">
+    <div id="loader">
+        <h3 id="overlay-text">Decrypting Keys ...</h3>
+        <p id="overlay-sub">Please be patient, this can take a while.</p>
     </div>
+  </div>
 </body>
 </html>

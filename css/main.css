@@ -1,21 +1,8 @@
 html, body {
   font-family: "Roboto",sans-serif;
-  background-color: #EEE;
+  background-color: #FFF;
   margin: 0;
   padding: 0;
-}
-
-#middle-strip {
-  background-color: #FFF;
-  height: 100%;
-  position: fixed;
-  width: 1100px;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  margin: auto;
-  z-index: 1;
 }
 
 .container, .header, .form, .footer {
@@ -167,10 +154,15 @@ html, body {
   color: #FFF;
   font-size: 16px;
   font-weight: 300;
-  width: 1100px;
+  width: 100%;
   margin: 0 auto;
   position: relative;
   z-index: 100;
+}
+
+.info .inner {
+  margin: 0 auto;
+  width: 1100px;
 }
 
 .info h2 {
@@ -286,7 +278,7 @@ td {
   padding-bottom: 20px;
 }
 
-#plain-text-decrypt {
+#plain-text-d {
   display: none;
 }
 
@@ -320,7 +312,7 @@ td {
   overflow: hidden;
   display:inline-block;
   box-shadow: 3px 3px 3px rgba(0,0,0,0.4);
-  background-color: #523971;
+  background-color: #7d5ab5;
 }
 
 #loader img {
@@ -331,10 +323,16 @@ td {
 }
 
 #loader h3 {
-  line-height: 100px;
+  margin-top: 20px;
   text-align: center;
   color: #FFF;
-  margin: 0;
+}
+
+#overlay-sub {
+  color: #FFF;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 12px;
 }
 
 .navigate .btn {
@@ -345,4 +343,12 @@ td {
 
 .btn.active {
   background-color: #7d5ab5;
+}
+
+#decrypt-tab {
+  display: none;
+}
+
+#decrypt-tab-0, #decrypt-tab-1, #decrypt-tab-2, #decrypt-tab-3 {
+  display: none;
 }

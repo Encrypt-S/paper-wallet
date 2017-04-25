@@ -30,6 +30,7 @@ function generate() {
       return;
     } else {
       document.getElementById("overlay").style.display = 'block';
+      document.getElementById("overlay-text").innerHTML = 'Encrypting Keys ...';
     }
   }
 
@@ -72,6 +73,7 @@ function generateOne(index, colorOption, numToGenerate) {
     document.getElementById('pt-encrypted-' + index).style.display = 'table-row'
     document.getElementById('password-' + index).innerHTML = password
     document.getElementById('pt-password-' + index).style.display = 'table-row'
+    document.getElementById('decrypt-tab-' + index).style.display = 'block'
     privateKey = encryptedKey;
   }
 
@@ -124,6 +126,7 @@ function resetOne(index) {
   document.getElementById('pubkey-qr-' + index).innerHTML = ''
   document.getElementById('privkey-qr-' + index).innerHTML = ''
   document.getElementById('wallet-' + index).style.display = 'none'
+  document.getElementById('decrypt-tab-' + index).style.display = 'none'
 }
 
 function print() {
@@ -135,41 +138,57 @@ function decrypt() {
     private: 0x96,
     public: 0x35
   }
-  var password = document.getElementById("password").value;
+  var password = document.getElementById("decrypt_password").value;
   var encryptedKey = document.getElementById("encrypted").value;
 
   document.getElementById("overlay").style.display = 'block';
+  document.getElementById("overlay-text").innerHTML = 'Decrypting Keys ...';
   setTimeout(function(){
 
     try {
       var decryptedKey = bip38.decrypt(encryptedKey, password, function(status) {
-        console.log('decrypting', Math.round(status.percent), '%')
+        console.log('decrypting', Math.round(status.percent), '%');
       });
 
-      var decodedDecrypted = wif.encode(150, decryptedKey.privateKey, decryptedKey.compressed)
+      var decodedDecrypted = wif.encode(150, decryptedKey.privateKey, decryptedKey.compressed);
+
+      console.log('decodedDecrypted', decodedDecrypted);
 
       var key = CoinKey.fromWif(decodedDecrypted, version);
 
-      document.getElementById("public-key-0").innerHTML = key.publicAddress;
-      document.getElementById("encrypted-key-0").innerHTML = encryptedKey;
-      document.getElementById("private-key-0").innerHTML = decodedDecrypted;
-      document.getElementById("password-0").innerHTML = password;
+      console.log('key', key);
+
+      document.getElementById("public-key-d").innerHTML = key.publicAddress;
+      document.getElementById("encrypted-key-d").innerHTML = encryptedKey;
+      document.getElementById("private-key-d").innerHTML = decodedDecrypted;
+      document.getElementById("password-d").innerHTML = password;
       document.getElementById('reset_decrypt').style.display = 'inline-block';
-      document.getElementById("plain-text-decrypt").style.display = 'block';
+      document.getElementById("plain-text-d").style.display = 'block';
       document.getElementById("overlay").style.display = 'none';
     } catch(e) {
       document.getElementById("overlay").style.display = 'none';
+      console.log('error', e);
     }
 
   }, 100);
 
 }
 
+function showDecrypt(){
+  document.getElementById('decrypt-tab').style.display = 'block';
+  document.getElementById('generate-tab').style.display = 'none';
+}
+
+function showGenerate(){
+  document.getElementById('decrypt-tab').style.display = 'none';
+  document.getElementById('generate-tab').style.display = 'block';
+}
+
 function decryptReset() {
-  document.getElementById("public-key-0").innerHTML = '';
-  document.getElementById("encrypted-key-0").innerHTML = '';
-  document.getElementById("private-key-0").innerHTML = '';
-  document.getElementById("password-0").innerHTML = '';
+  document.getElementById("public-key-d").innerHTML = '';
+  document.getElementById("encrypted-key-d").innerHTML = '';
+  document.getElementById("private-key-d").innerHTML = '';
+  document.getElementById("password-d").innerHTML = '';
   document.getElementById("plain-text-decrypt").style.display = 'none';
   document.getElementById('reset_decrypt').style.display = 'none';
 }
@@ -180,6 +199,13 @@ window.onload = function(){
   if (document.getElementById('reset')) document.getElementById('reset').onclick = reset;
   if (document.getElementById('decrypt')) document.getElementById('decrypt').onclick = decrypt;
   if (document.getElementById('reset_decrypt')) document.getElementById('reset_decrypt').onclick = decryptReset;
+  if (document.getElementById('decrypt-tab-btn')) document.getElementById('decrypt-tab-btn').onclick = showDecrypt;
+  if (document.getElementById('generate-tab-btn')) document.getElementById('generate-tab-btn').onclick = showGenerate;
+
+  if (document.getElementById('decrypt-tab-0')) document.getElementById('decrypt-tab-0').onclick = showDecrypt;
+  if (document.getElementById('decrypt-tab-1')) document.getElementById('decrypt-tab-1').onclick = showDecrypt;
+  if (document.getElementById('decrypt-tab-2')) document.getElementById('decrypt-tab-2').onclick = showDecrypt;
+  if (document.getElementById('decrypt-tab-3')) document.getElementById('decrypt-tab-3').onclick = showDecrypt;
 }
 
 },{"../node_modules/coinkey/lib/util":31,"bip38":7,"bs58":26,"coinkey":30,"coinstring":32,"qrcode-generator":73,"secure-random":82,"wif":91}],2:[function(require,module,exports){
@@ -2144,7 +2170,7 @@ function decryptRaw (buffer, passphrase, progressCallback, scryptParams) {
   var d = BigInteger.fromBuffer(privateKey)
   var address = getAddress(d, compressed)
   var checksum = hash256(address).slice(0, 4)
-  //assert.deepEqual(salt, checksum)
+  assert.deepEqual(salt, checksum)
 
   return {
     privateKey: privateKey,
