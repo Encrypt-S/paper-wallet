@@ -14,8 +14,6 @@ function generate() {
 
   var password = document.getElementById("password").value;
 
-
-
   if (password == "") {
     var encrypt = confirm('Are you sure you want proceed with unencrypted wallets?')
     if (!encrypt) {
@@ -33,6 +31,8 @@ function generate() {
       document.getElementById("overlay").style.display = 'block';
     }
   }
+
+  for (var i=0; i < 4; i++) resetOne(i);
 
   setTimeout(function(){
     for (var i=0; i < 4; i++) generateOne(i, colorOption, numToGenerate)
@@ -61,12 +61,8 @@ function generateOne(index, colorOption, numToGenerate) {
   if (password !== "") {
     var decoded = wif.decode(key.privateWif);
     bip38.version = version;
-    document.getElementById('keyID').innerHTML = index + 1;
-    document.getElementById('status').style.display = 'block';
     var encryptedKey = bip38.encrypt(decoded.privateKey, decoded.compressed, password, function (status) {
       console.log('encrypting', Math.round(status.percent), '%')
-
-      document.getElementById('percent').innerHTML = Math.round(status.percent) + '%';
     })
 
     console.log(password, encryptedKey);

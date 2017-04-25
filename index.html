@@ -59,14 +59,11 @@
         <option value="FULL_COLOR">Full Color</option>
         <option value="BLACK_WHITE">Black & White</option>
       </select>
-      <input class="form-input" id="password" placeholder="BIP38 Password (Optional)" />
+      <input class="form-input" id="password" placeholder="BIP38 Password (Optional)" maxlength="32" />
       <button id="generate" class="btn btn-small">Generate Wallets</button>
       <button id="print" class="btn btn-small">Print</button>
       <button id="reset" class="btn  btn-small btn-red">Reset</button>
-
-      <p id="status">Encrypting Private Key <span id="keyID"></span>: <span id="percent"></span></p>
     </div>
-
 
     <div class="container">
       <div id="wallet-0" class="wallet-container">
