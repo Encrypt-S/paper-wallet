@@ -1,11 +1,11 @@
 const electron = require('electron')
 // Module to control application life.
-const app = electron.app
+const { Menu, app } = electron;
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
 
-BrowserWindow.width = 1120;
-BrowserWindow.height = 700;
+BrowserWindow.width = 1150;
+BrowserWindow.height = 750;
 
 const path = require('path')
 const url = require('url')
@@ -15,6 +15,28 @@ const url = require('url')
 let mainWindow
 
 function createWindow () {
+
+  var template = [{
+  label: "Application",
+    submenu: [
+      { label: "About Application", selector: "orderFrontStandardAboutPanel:" },
+      { type: "separator" },
+      { label: "Quit", accelerator: "Command+Q", click: function() { app.quit(); }}
+    ]}, {
+    label: "Edit",
+    submenu: [
+      { label: "Undo", accelerator: "CmdOrCtrl+Z", selector: "undo:" },
+      { label: "Redo", accelerator: "Shift+CmdOrCtrl+Z", selector: "redo:" },
+      { type: "separator" },
+      { label: "Cut", accelerator: "CmdOrCtrl+X", selector: "cut:" },
+      { label: "Copy", accelerator: "CmdOrCtrl+C", selector: "copy:" },
+      { label: "Paste", accelerator: "CmdOrCtrl+V", selector: "paste:" },
+      { label: "Select All", accelerator: "CmdOrCtrl+A", selector: "selectAll:" }
+    ]}
+  ];
+
+  Menu.setApplicationMenu(Menu.buildFromTemplate(template));
+
   // Create the browser window.
   mainWindow = new BrowserWindow({width: 1120, height: 700, icon: 'images/nav-white-square.png'})
 

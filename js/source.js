@@ -66,8 +66,6 @@ function generateOne(index, colorOption, numToGenerate) {
       console.log('encrypting', Math.round(status.percent), '%')
     })
 
-    console.log(password, encryptedKey);
-
     document.getElementById('encrypted-key-' + index).innerHTML = encryptedKey
     document.getElementById('pt-encrypted-' + index).style.display = 'table-row'
     document.getElementById('password-' + index).innerHTML = password
@@ -151,11 +149,7 @@ function decrypt() {
 
       var decodedDecrypted = wif.encode(150, decryptedKey.privateKey, decryptedKey.compressed);
 
-      console.log('decodedDecrypted', decodedDecrypted);
-
       var key = CoinKey.fromWif(decodedDecrypted, version);
-
-      console.log('key', key);
 
       document.getElementById("public-key-d").innerHTML = key.publicAddress;
       document.getElementById("encrypted-key-d").innerHTML = encryptedKey;

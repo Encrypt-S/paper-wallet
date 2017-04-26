@@ -60,9 +60,9 @@ html, body {
 .privkey-string {
   position: absolute;
   top: 60px;
-  right: 21px;
+  right: 18px;
   text-transform: uppercase;
-  width: 440px;
+  width: 441px;
   text-align: center;
   letter-spacing: 0.5px;
 }
@@ -70,9 +70,9 @@ html, body {
 .privkey-string-invert {
   position: absolute;
   bottom: 60px;
-  right: 21px;
+  right: 18px;
   text-transform: uppercase;
-  width: 440px;
+  width: 441px;
   text-align: center;
   letter-spacing: 0.5px;
   -webkit-transform:rotate(-180deg);

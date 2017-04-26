@@ -3,8 +3,16 @@
   "version": "1.0.0",
   "description": "A paper wallet generator with BIP38 password encryption for Nav Coin.",
   "main": "main.js",
+  "build": {
+    "appId": "org.navcoin.paper",
+    "mac": {
+      "category": "finance"
+    }
+  },
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "pack": "build --dir",
+    "dist": "build -mw"
   },
   "repository": "https://github.com/navcoindev/paper-wallet",
   "keywords": [
@@ -19,13 +27,11 @@
   "devDependencies": {
     "electron": "~1.6.2",
     "aes": "^0.1.0",
+    "bip38": "https://github.com/craigmacgregor/bip38/tarball/8e11c7da1d4df8a80b5aa32ed1457e474d911f20",
     "browserify": "^14.3.0",
     "coinkey": "^2.0.0",
     "qrcode-generator": "^1.2.0",
     "secure-random": "^1.1.1",
     "wif": "^2.0.6"
-  },
-  "dependencies": {
-    "bip38": "^2.0.1"
   }
 }
