@@ -29,7 +29,6 @@ html, body {
   position: absolute;
   top: 43px;
   left: 26px;
-  text-transform: uppercase;
   width: 280px;
   text-align: center;
   letter-spacing: 0.5px;
@@ -39,7 +38,6 @@ html, body {
   position: absolute;
   bottom: 43px;
   left: 26px;
-  text-transform: uppercase;
   width: 280px;
   text-align: center;
   letter-spacing: 0.5px;
@@ -61,7 +59,6 @@ html, body {
   position: absolute;
   top: 60px;
   right: 18px;
-  text-transform: uppercase;
   width: 441px;
   text-align: center;
   letter-spacing: 0.5px;
@@ -71,7 +68,6 @@ html, body {
   position: absolute;
   bottom: 60px;
   right: 18px;
-  text-transform: uppercase;
   width: 441px;
   text-align: center;
   letter-spacing: 0.5px;
