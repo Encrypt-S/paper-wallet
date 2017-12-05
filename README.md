@@ -32,6 +32,7 @@ npm start
 ## Build
 
 ```bash
+npm install -g electron-packager
 electron-packager ./ nav-paper --icon=build/icon.icns
 ```
 
