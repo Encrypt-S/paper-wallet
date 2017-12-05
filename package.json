@@ -1,18 +1,18 @@
 {
   "name": "NavCoinPaperWallet",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A paper wallet generator with BIP38 password encryption for Nav Coin.",
   "main": "main.js",
   "build": {
     "appId": "org.navcoin.paper",
     "mac": {
-      "category": "finance"
+      "category": "finance",
     }
   },
   "scripts": {
     "start": "electron .",
-    "pack": "build --dir",
-    "dist": "build -mw"
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
   },
   "repository": "https://github.com/navcoindev/paper-wallet",
   "keywords": [
