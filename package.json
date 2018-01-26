@@ -6,7 +6,7 @@
   "build": {
     "appId": "org.navcoin.paper",
     "mac": {
-      "category": "finance",
+      "category": "finance"
     }
   },
   "scripts": {
