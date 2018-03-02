@@ -38,7 +38,7 @@ function createWindow () {
   Menu.setApplicationMenu(Menu.buildFromTemplate(template));
 
   // Create the browser window.
-  mainWindow = new BrowserWindow({width: 1120, height: 700, icon: 'images/nav-white-square.png'})
+  mainWindow = new BrowserWindow({width: 1150, height: 750, icon: 'images/nav-white-square.png'})
 
   // and load the index.html of the app.
   mainWindow.loadURL(url.format({
