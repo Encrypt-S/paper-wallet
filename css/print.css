@@ -1,4 +1,10 @@
-.header, .form, .footer, .info, .paper-title, .pt-output {
+@page {
+  size: A4 portrait; 
+  max-height:100%;
+  max-width:100%;
+}
+
+.header, .form, .footer, .info, .paper-title, .pt-output, #decrypt-tab-0, #decrypt-tab-1, #decrypt-tab-2, #decrypt-tab-3 {
   display: none!important;
 }
 
@@ -6,3 +12,4 @@
   border-bottom: none;
   padding-bottom: 0px;
 }
+
