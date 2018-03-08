@@ -47,6 +47,7 @@ Note: If you're using Linux Bash for Windows, [see this guide](https://www.howto
 - [electron/electron-api-demos](https://github.com/electron/electron-api-demos) - an Electron app that teaches you how to use Electron
 - [hokein/electron-sample-apps](https://github.com/hokein/electron-sample-apps) - small demo apps for the various Electron APIs
 
+
 ## License
 
-[CC0 1.0 (Public Domain)](LICENSE.md)
+Distributed under the [MIT software license](http://www.opensource.org/licenses/mit-license.php).
