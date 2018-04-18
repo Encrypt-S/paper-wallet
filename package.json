@@ -26,11 +26,12 @@
   "author": "craigmacgregor",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^1.8.2",
     "aes": "^0.1.0",
     "bip38": "https://github.com/craigmacgregor/bip38/tarball/8e11c7da1d4df8a80b5aa32ed1457e474d911f20",
     "browserify": "^14.3.0",
     "coinkey": "^2.0.0",
+    "electron": "^1.8.2",
+    "electron-builder": "^20.8.1",
     "qrcode-generator": "^1.2.0",
     "secure-random": "^1.1.1",
     "wif": "^2.0.6"
