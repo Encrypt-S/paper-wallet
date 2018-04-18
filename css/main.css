@@ -348,3 +348,7 @@ td {
 #decrypt-tab-0, #decrypt-tab-1, #decrypt-tab-2, #decrypt-tab-3 {
   display: none;
 }
+
+.hidden {
+  display: none;
+}
