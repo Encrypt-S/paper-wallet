@@ -32,4 +32,4 @@ Note: If you're using Linux Bash for Windows, [see this guide](https://www.howto
 
 ## License
 
-[CC0 1.0 (Public Domain)](LICENSE.md)
+Distributed under the [MIT software license](http://www.opensource.org/licenses/mit-license.php).
