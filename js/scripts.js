@@ -4299,40 +4299,36 @@ require('./convert')
 module.exports = BigInteger
 },{"./bigi":19,"./convert":20}],22:[function(require,module,exports){
 module.exports={
-  "_args": [
-    [
-      "bigi@1.4.2",
-      "C:\\Users\\mathe\\Documents\\Workspace\\paper-wallet"
-    ]
-  ],
-  "_development": true,
-  "_from": "bigi@1.4.2",
+  "_from": "bigi@^1.2.0",
   "_id": "bigi@1.4.2",
   "_inBundle": false,
   "_integrity": "sha1-nGZalfiLiwj8Bc/XMfVhhZ1yWCU=",
   "_location": "/bigi",
   "_phantomChildren": {},
   "_requested": {
-    "type": "version",
+    "type": "range",
     "registry": true,
-    "raw": "bigi@1.4.2",
+    "raw": "bigi@^1.2.0",
     "name": "bigi",
     "escapedName": "bigi",
-    "rawSpec": "1.4.2",
+    "rawSpec": "^1.2.0",
     "saveSpec": null,
-    "fetchSpec": "1.4.2"
+    "fetchSpec": "^1.2.0"
   },
   "_requiredBy": [
     "/bip38",
     "/ecurve"
   ],
   "_resolved": "https://registry.npmjs.org/bigi/-/bigi-1.4.2.tgz",
-  "_spec": "1.4.2",
-  "_where": "C:\\Users\\mathe\\Documents\\Workspace\\paper-wallet",
+  "_shasum": "9c665a95f88b8b08fc05cfd731f561859d725825",
+  "_spec": "bigi@^1.2.0",
+  "_where": "/Users/Ro/www/nav/paper-wallet/node_modules/bip38",
   "bugs": {
     "url": "https://github.com/cryptocoinjs/bigi/issues"
   },
+  "bundleDependencies": false,
   "dependencies": {},
+  "deprecated": false,
   "description": "Big integers.",
   "devDependencies": {
     "coveralls": "^2.11.2",
@@ -18196,28 +18192,21 @@ utils.intFromLE = intFromLE;
 
 },{"bn.js":25,"minimalistic-assert":127,"minimalistic-crypto-utils":128}],103:[function(require,module,exports){
 module.exports={
-  "_args": [
-    [
-      "elliptic@6.4.0",
-      "C:\\Users\\mathe\\Documents\\Workspace\\paper-wallet"
-    ]
-  ],
-  "_development": true,
-  "_from": "elliptic@6.4.0",
+  "_from": "elliptic@^6.0.0",
   "_id": "elliptic@6.4.0",
   "_inBundle": false,
   "_integrity": "sha1-ysmvh2LIWDYYcAPI3+GT5eLq5d8=",
   "_location": "/elliptic",
   "_phantomChildren": {},
   "_requested": {
-    "type": "version",
+    "type": "range",
     "registry": true,
-    "raw": "elliptic@6.4.0",
+    "raw": "elliptic@^6.0.0",
     "name": "elliptic",
     "escapedName": "elliptic",
-    "rawSpec": "6.4.0",
+    "rawSpec": "^6.0.0",
     "saveSpec": null,
-    "fetchSpec": "6.4.0"
+    "fetchSpec": "^6.0.0"
   },
   "_requiredBy": [
     "/browserify-sign",
@@ -18225,8 +18214,9 @@ module.exports={
     "/secp256k1"
   ],
   "_resolved": "https://registry.npmjs.org/elliptic/-/elliptic-6.4.0.tgz",
-  "_spec": "6.4.0",
-  "_where": "C:\\Users\\mathe\\Documents\\Workspace\\paper-wallet",
+  "_shasum": "cac9af8762c85836187003c8dfe193e5e2eae5df",
+  "_spec": "elliptic@^6.0.0",
+  "_where": "/Users/Ro/www/nav/paper-wallet/node_modules/browserify-sign",
   "author": {
     "name": "Fedor Indutny",
     "email": "fedor@indutny.com"
@@ -18234,6 +18224,7 @@ module.exports={
   "bugs": {
     "url": "https://github.com/indutny/elliptic/issues"
   },
+  "bundleDependencies": false,
   "dependencies": {
     "bn.js": "^4.4.0",
     "brorand": "^1.0.1",
@@ -18243,6 +18234,7 @@ module.exports={
     "minimalistic-assert": "^1.0.0",
     "minimalistic-crypto-utils": "^1.0.0"
   },
+  "deprecated": false,
   "description": "EC cryptography",
   "devDependencies": {
     "brfs": "^1.4.3",

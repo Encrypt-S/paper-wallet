@@ -10,9 +10,9 @@
     }
   },
   "scripts": {
-    "start": "npm run browserify && electron .",
-    "pack": "npm run browserify && electron-builder --dir",
-    "dist": "npm run browserify && electron-builder",
+    "start": "npm run browserify && npx electron .",
+    "pack": "npm run browserify && npx electron-builder --dir",
+    "dist": "npm run browserify && npx electron-builder",
     "browserify": "npx browserify ./js/source.js -o ./js/scripts.js"
   },
   "repository": "https://github.com/navcoindev/paper-wallet",
