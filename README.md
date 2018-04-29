@@ -3,7 +3,7 @@
 This is a simple Electron app that can create up to 4 wallets at once (encrypted or unencrypted).
 The wallets can all fit on a single piece of A4 paper.
 None of the generated keys are ever broadcast over the internet.
-This application has been created with mostly vanilla Javascript and  minimal use of libraries to make it easily auditable. 
+This application has been created with mostly vanilla Javascript and minimal use of libraries to make it easily auditable. 
 
 
 ## To Use
