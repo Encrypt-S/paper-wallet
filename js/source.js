@@ -187,6 +187,14 @@ function decryptReset() {
 }
 
 window.onload = function(){
+  var userAgent = navigator.userAgent.toLowerCase();
+  if (userAgent.indexOf(' electron/') > -1) { // If we are running in Electron
+    var elementsToHide = document.getElementsByClassName('hidden-offline')
+    for(i = 0; i < elementsToHide.length; i++) {
+      var classes = elementsToHide.item(i).className += ' hidden'
+    }
+  } 
+
   if (document.getElementById('generate')) document.getElementById('generate').onclick = generate;
   if (document.getElementById('print')) document.getElementById('print').onclick = print;
   if (document.getElementById('reset')) document.getElementById('reset').onclick = reset;

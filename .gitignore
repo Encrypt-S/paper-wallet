@@ -3,5 +3,8 @@
 /.tmp
 /.sass-cache
 /bower_components
-
+/nav-paper-*
+nav-paper-*
 \.DS_Store
+
+NavCoinPaperWallet-1\.0\.1\.tgz

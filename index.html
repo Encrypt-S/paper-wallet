@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Nav Coin Paper Wallet</title>
+    <title>NavCoin Paper Wallet</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="css/main.css">
@@ -14,7 +14,7 @@
     <div id="generate-tab">
       <div class="header">
         <img class="logo" src="images/logo-extended.png" />
-        <h1>Nav Coin Paper Wallet Generator</h1>
+        <h1>NavCoin Paper Wallet Generator</h1><span> v1.0.2</span>
         <span class="navigate">
           <a class="btn btn-small" id="decrypt-tab-btn">Decrypt</a>
           <a class="btn btn-small active">Generate</a>
@@ -33,13 +33,12 @@
               <h2>What you need to know</h2>
               <p>
                 None of the generated keys are ever broadcast over the internet.
-                It is recommended that run it locally on your computer instead of generating the keys directly on the site.
+                <span class="hidden-offline">It is recommended that you run this generator locally on your computer instead of generating the keys directly on this site.</span>
               </p>
               <p>
-                For the extra paranoid; you can run the generator and print the wallets using a secure offline environment and correctly wipe the environment and printer memory after use.
+                For the extra paranoid; you can run this generator and print the wallets using a secure offline environment and correctly wipe the environment and printer memory after use.
               </p>
-              <a href="http://navcoin.org/downloads/#paper-wallet" target="e" class="btn">Download the Generator</a>
-
+              <a href="https://github.com/Encrypt-S/paper-wallet/releases/latest" target="e" class="btn hidden-offline">Download the Generator</a>
             </div>
           </div>
         </div>
@@ -158,15 +157,15 @@
 
       <div class="footer">
         <div class="container">
-          <p>brought to you by the <a href="http://www.navcoin.org" target="e">Nav Coin</a> team</p>
-          <p class="terms">By using this software you agree that Nav Coin is not responsible for any loss or damages caused by using this sofware and that you use it at your own risk.</p>
+          <p>Brought to you by the <a href="https://encrypt-s.com/" target="e">Encrypt S</a> team</p>
+          <p class="terms">By using this software you agree that Encrypt S is not responsible for any loss or damages caused by using this sofware and that you use it at your own risk.</p>
         </div>
       </div>
   </div>
   <div id="decrypt-tab">
     <div class="header">
       <img class="logo" src="images/logo-extended.png" />
-      <h1>Nav Coin Paper Wallet Generator</h1>
+      <h1>NavCoin Paper Wallet Generator</h1>
       <span class="navigate">
         <a class="btn btn-small active">Decrypt</a>
         <a class="btn btn-small" id="generate-tab-btn">Generate</a>
@@ -214,13 +213,12 @@
           <tr><td class="row-key">BIP38 Password</td><td id="password-d"></td></tr>
         </table>
       </div>
-
     </div>
 
     <div class="footer">
       <div class="container">
-        <p>brought to you by the <a href="http://www.navcoin.org" target="e">Nav Coin</a> team</p>
-        <p class="terms">By using this software you agree that Nav Coin is not responsible for any loss or damages caused by using this sofware and that you use it at your own risk.</p>
+        <p>Brought to you by the <a href="https://encrypt-s.com/" target="e">Encrypt S</a> team</p>
+        <p class="terms">By using this software you agree that Encrypt S is not responsible for any loss or damages caused by using this sofware and that you use it at your own risk.</p>
       </div>
     </div>
   </div>
